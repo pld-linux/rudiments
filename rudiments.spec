@@ -1,9 +1,7 @@
-# TODO
-# - -static
 Summary:	C++ class library for daemons, clients and servers
 Name:		rudiments
 Version:	0.29
-Release:	0.1
+Release:	0.4
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/rudiments/%{name}-%{version}.tar.gz
@@ -20,11 +18,20 @@ for the standard C functions for things like such as regular
 expressions, semaphores and signal handling.
 
 %package devel
-Summary:	Libraries and header files for developing with rudiments
+Summary:	Libraries and header files for developing rudiments
 Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Libraries and header files for developing with rudiments.
+Libraries and header files for developing rudiments.
+
+%package static
+Summary:	static librarires for developing rudiments
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+static libraries files for developing rudiments.
 
 %package doc
 Summary:	Documentation for rudiments
@@ -50,9 +57,12 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/librudiments-*.so.*
+%attr(755,root,root) %{_libdir}/librudiments-*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -60,8 +70,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.so
 %attr(755,root,root) %{_bindir}/rudiments-config
 %{_pkgconfigdir}/rudiments.pc
+
+%files static
+%defattr(644,root,root,755)
 %{_libdir}/*.a
 
 %files doc
 %defattr(644,root,root,755)
-%{_docdir}/
+%{_docdir}/%{name}
