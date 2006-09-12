@@ -9,6 +9,8 @@ Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/rudiments/%{name}-%{version}.tar.gz
 # Source0-md5:	5f823e39cb89b6bcd309e3628ba48d3e
 URL:		http://rudiments.sourceforge.net/
+BuildRequires:	openssl-devel
+BuildRequires:	pcre-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
