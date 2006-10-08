@@ -1,4 +1,5 @@
 Summary:	C++ class library for daemons, clients and servers
+Summary(pl):	Biblioteka klas C++ dla demonów, klientów i serwerów
 Name:		rudiments
 Version:	0.29
 Release:	0.4
@@ -17,28 +18,46 @@ for things such as daemons, clients and servers, and wrapper classes
 for the standard C functions for things like such as regular
 expressions, semaphores and signal handling.
 
+%description -l pl
+Rudiments to maj±ca otwarte ¼ród³a biblioteka klas C++ dostarczaj±ca
+klasy bazowe do tworzenia demonów, klientów i serwerów oraz klasy
+obudowuj±ce dla standardowych funkcji C obs³uguj±cych wyra¿enia
+regularne, semafory, sygna³y itp.
+
 %package devel
-Summary:	Libraries and header files for developing rudiments
+Summary:	Header files for rudiments library
+Summary(pl):	Pliki nag³ówkowe biblioteki rudiments
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Libraries and header files for developing rudiments.
+Header files for rudiments library.
+
+%description devel -l pl
+Pliki nag³ówkowe biblioteki rudiments.
 
 %package static
-Summary:	static librarires for developing rudiments
+Summary:	Static rudiments library
+Summary(pl):	Statyczna biblioteka rudiments
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-static libraries files for developing rudiments.
+Static rudiments library.
+
+%description static -l pl
+Statyczna biblioteka rudiments.
 
 %package doc
 Summary:	Documentation for rudiments
-Group:		Development/Libraries
+Summary(pl):	Dokumentacja dla biblioteki rudiments
+Group:		Documentation
 
 %description doc
 Documentation for rudiments.
+
+%description doc -l pl
+Dokumentacja dla biblioteki rudiments.
 
 %prep
 %setup -q
@@ -49,10 +68,9 @@ Documentation for rudiments.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,9 +84,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/rudiments
-%{_libdir}/*.so
 %attr(755,root,root) %{_bindir}/rudiments-config
+%attr(755,root,root) %{_libdir}/*.so
+%{_libdir}/*.la
+%{_includedir}/rudiments
 %{_pkgconfigdir}/rudiments.pc
 
 %files static
