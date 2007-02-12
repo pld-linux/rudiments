@@ -1,5 +1,5 @@
 Summary:	C++ class library for daemons, clients and servers
-Summary(pl):	Biblioteka klas C++ dla demon體, klient體 i serwer體
+Summary(pl.UTF-8):   Biblioteka klas C++ dla demon贸w, klient贸w i serwer贸w
 Name:		rudiments
 Version:	0.29
 Release:	0.4
@@ -18,45 +18,45 @@ for things such as daemons, clients and servers, and wrapper classes
 for the standard C functions for things like such as regular
 expressions, semaphores and signal handling.
 
-%description -l pl
-Rudiments to maj眂a otwarte 紃骴砤 biblioteka klas C++ dostarczaj眂a
-klasy bazowe do tworzenia demon體, klient體 i serwer體 oraz klasy
-obudowuj眂e dla standardowych funkcji C obs硊guj眂ych wyra縠nia
-regularne, semafory, sygna硑 itp.
+%description -l pl.UTF-8
+Rudiments to maj膮ca otwarte 藕r贸d艂a biblioteka klas C++ dostarczaj膮ca
+klasy bazowe do tworzenia demon贸w, klient贸w i serwer贸w oraz klasy
+obudowuj膮ce dla standardowych funkcji C obs艂uguj膮cych wyra偶enia
+regularne, semafory, sygna艂y itp.
 
 %package devel
 Summary:	Header files for rudiments library
-Summary(pl):	Pliki nag丑wkowe biblioteki rudiments
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe biblioteki rudiments
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for rudiments library.
 
-%description devel -l pl
-Pliki nag丑wkowe biblioteki rudiments.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe biblioteki rudiments.
 
 %package static
 Summary:	Static rudiments library
-Summary(pl):	Statyczna biblioteka rudiments
+Summary(pl.UTF-8):   Statyczna biblioteka rudiments
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static rudiments library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka rudiments.
 
 %package doc
 Summary:	Documentation for rudiments
-Summary(pl):	Dokumentacja dla biblioteki rudiments
+Summary(pl.UTF-8):   Dokumentacja dla biblioteki rudiments
 Group:		Documentation
 
 %description doc
 Documentation for rudiments.
 
-%description doc -l pl
+%description doc -l pl.UTF-8
 Dokumentacja dla biblioteki rudiments.
 
 %prep
