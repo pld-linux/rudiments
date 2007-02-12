@@ -1,5 +1,5 @@
 Summary:	C++ class library for daemons, clients and servers
-Summary(pl.UTF-8):   Biblioteka klas C++ dla demonów, klientów i serwerów
+Summary(pl.UTF-8):	Biblioteka klas C++ dla demonów, klientów i serwerów
 Name:		rudiments
 Version:	0.29
 Release:	0.4
@@ -26,7 +26,7 @@ regularne, semafory, sygnały itp.
 
 %package devel
 Summary:	Header files for rudiments library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki rudiments
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki rudiments
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -38,7 +38,7 @@ Pliki nagłówkowe biblioteki rudiments.
 
 %package static
 Summary:	Static rudiments library
-Summary(pl.UTF-8):   Statyczna biblioteka rudiments
+Summary(pl.UTF-8):	Statyczna biblioteka rudiments
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -50,7 +50,7 @@ Statyczna biblioteka rudiments.
 
 %package doc
 Summary:	Documentation for rudiments
-Summary(pl.UTF-8):   Dokumentacja dla biblioteki rudiments
+Summary(pl.UTF-8):	Dokumentacja dla biblioteki rudiments
 Group:		Documentation
 
 %description doc
