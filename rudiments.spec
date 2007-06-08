@@ -2,12 +2,13 @@ Summary:	C++ class library for daemons, clients and servers
 Summary(pl.UTF-8):	Biblioteka klas C++ dla demonów, klientów i serwerów
 Name:		rudiments
 Version:	0.30
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/rudiments/%{name}-%{version}.tar.gz
 # Source0-md5:	5fed91a1e01eb8bb821f306d74226086
 URL:		http://rudiments.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	openssl-devel
 BuildRequires:	pcre-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,6 +64,7 @@ Dokumentacja dla biblioteki rudiments.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
