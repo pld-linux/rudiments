@@ -1,0 +1,11 @@
+--- rudiments-0.33/src/logger.C.orig	2009-11-21 04:30:55.000000000 +0100
++++ rudiments-0.33/src/logger.C	2014-01-14 18:04:10.192263869 +0100
+@@ -122,7 +122,7 @@ void syslogdestination::close() {
+ 
+ void syslogdestination::write(const char *string) {
+ #ifdef RUDIMENTS_HAVE_SYSLOG_H
+-	syslog(pvt->_priority,string);
++	syslog(pvt->_priority, "%s", string);
+ #endif
+ }
+ 
