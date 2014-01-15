@@ -3,13 +3,14 @@ Summary(pl.UTF-8):	Biblioteka klas C++ dla demonów, klientów i serwerów
 Name:		rudiments
 Version:	0.33
 Release:	1
-License:	LGPL
-Group:		Development/Libraries
+License:	LGPL v2+
+Group:		Libraries
 Source0:	http://downloads.sourceforge.net/rudiments/%{name}-%{version}.tar.gz
 # Source0-md5:	1269218e2eb0b4b19b47945f530ab3e8
 Patch0:		format-security.patch
 URL:		http://rudiments.sourceforge.net/
 BuildRequires:	automake
+BuildRequires:	libstdc++-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pcre-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,6 +32,9 @@ Summary:	Header files for rudiments library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki rudiments
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel
+Requires:	openssl-devel
+Requires:	pcre-devel
 
 %description devel
 Header files for rudiments library.
@@ -84,21 +88,22 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/librudiments-*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/librudiments-*.so.1
+%doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_libdir}/librudiments-%{version}.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/librudiments-%{version}.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rudiments-config
-%attr(755,root,root) %{_libdir}/*.so
-%{_mandir}/man1/rudiments-config.1*
-%{_libdir}/*.la
+%attr(755,root,root) %{_libdir}/librudiments.so
+%{_libdir}/librudiments.la
 %{_includedir}/rudiments
 %{_pkgconfigdir}/rudiments.pc
+%{_mandir}/man1/rudiments-config.1*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/librudiments.a
 
 %files doc
 %defattr(644,root,root,755)
