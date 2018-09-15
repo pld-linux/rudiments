@@ -2,7 +2,7 @@ Summary:	C++ class library for daemons, clients and servers
 Summary(pl.UTF-8):	Biblioteka klas C++ dla demonów, klientów i serwerów
 Name:		rudiments
 Version:	0.33
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/rudiments/%{name}-%{version}.tar.gz
